@@ -1,0 +1,39 @@
+# Used by Airplane to identify your task. Do not change.
+slug: query_user
+
+# A human-readable name for your task.
+name: query_user
+
+# A human-readable description for your task.
+description: "Query the DB for user info"
+
+# A list of inputs to your task.
+parameters:
+#   # An identifier for the parameter, which can be used in JavaScript
+#   # templates (https://docs.airplane.dev/runbooks/javascript-templates).
+  - slug: name
+#   # A human-readable name for the parameter.
+    name: Name
+#   # The type of parameter. Valid values: shorttext, longtext, sql, boolean,
+#   # upload, integer, float, date, datetime, configvar.
+    type: integer
+#   # A human-readable description of the parameter.
+    description: The users ID.
+#   # The default value of the parameter.
+    default: 1
+# Configuration for a SQL task.
+sql:
+  # The name of a database resource.
+  resource: "[Demo DB]"
+
+  # The path to the .sql file containing the logic for this task. This can be
+  # absolute or relative to the location of the definition file. The contents
+  # of the .sql file support JavaScript templates
+  # (https://docs.airplane.dev/runbooks/javascript-templates).
+  entrypoint: query_user.sql
+
+  # A map of query arguments that can be used to safely pass parameter inputs
+  # to your query. Supports JavaScript templates
+  # (https://docs.airplane.dev/runbooks/javascript-templates).
+  queryArgs:
+     user_id: "{{params.user_id}}"
