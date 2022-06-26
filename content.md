@@ -22,11 +22,11 @@ Traditional runbooks are not executable, which means that any action listed in a
 
 As a simple example, let's say you are tasked with sending customer information from a CRM to a Slack channel on a weekly basis. In a traditional runbook, this process involves five steps:
 
-Log in to CRM
-Locate the customer using their id
-Export the customer information
-Format the information for Slack
-Send slack message
+- Log in to CRM
+- Locate the customer using their id
+- Export the customer information
+- Format the information for Slack
+- Send slack message
 
 The five steps can be converted to a runbook containing two tasks. 
 
